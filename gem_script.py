@@ -54,6 +54,7 @@ if __name__ == '__main__':
         tickers = [line.strip() for line in file]
     for ticker in tickers:
         profit = calculate_ytd_profit(ticker)
+        logger.info("%s ticker returned %s%% in the last 12 months.", ticker, round(profit * 100, 2))
         if profit > highest_profit[1]:
             highest_profit[0] = ticker
             highest_profit[1] = profit
